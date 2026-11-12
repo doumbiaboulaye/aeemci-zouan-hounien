@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site officiel de l'AEEMCI Sous-Comité Zouan-Hounien">
+    <title>AEEMCI | Sous-Comité Zouan-Hounien</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8f5;
+            color: #26352b;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #075c36;
+            color: white;
+            padding: 22px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .logo h1 {
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+
+        .logo p {
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover { color: #e5c36c; }
+
+        .hero {
+            min-height: 430px;
+            padding: 85px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #087443, #063d29);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sur-titre {
+            color: #e8cd80;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin: 15px 0 5px;
+        }
+
+        .hero h3 {
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin-bottom: 20px;
+        }
+
+        .bouton {
+            display: inline-block;
+            background: #e3bd62;
+            color: #153c29;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 65px 7%;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #087443;
+            font-size: 29px;
+            margin-bottom: 22px;
+        }
+
+        .section p {
+            max-width: 800px;
+            margin: 10px auto;
+        }
+
+        .cartes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .carte {
+            background: white;
+            padding: 28px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            border-bottom: 4px solid #087443;
+        }
+
+        .carte h3 {
+            color: #087443;
+            margin-bottom: 12px;
+        }
+
+        .galerie img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .galerie .carte { overflow: hidden; }
+
+        #formInscription {
+            max-width: 550px;
+            margin: 25px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        #formInscription label {
+            display: block;
+            margin-top: 13px;
+            font-weight: bold;
+        }
+
+        #formInscription input,
+        #formInscription textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        #formInscription button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px;
+            background: #087443;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #formInscription button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #messageForm {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #063d29;
+            color: white;
+            text-align: center;
+            padding: 28px 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a { font-size: 13px; }
+
+            .hero {
+                min-height: 380px;
+                padding: 65px 18px;
+            }
+
+            .hero h2 { font-size: 30px; }
+            .hero h3 { font-size: 19px; }
+
+            .section { padding: 45px 18px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <h1>AEEMCI</h1>
+        <p>SOUS-COMITÉ ZOUAN-HOUNIEN</p>
+    </div>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#activites">Activités</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#inscription">Inscription</a>
+        <a href="#actualites">Actualités</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <section id="accueil" class="hero">
+        <p class="sur-titre">BIENVENUE SUR NOTRE SITE OFFICIEL</p>
+        <h2>Bienvenue à l'AEEMCI</h2>
+        <h3>Sous-Comité Zouan-Hounien</h3>
+        <p>
+            Unis dans la foi, engagés dans le savoir,
+            au service de la communauté.
+        </p>
+        <a href="#apropos" class="bouton">
+            Découvrir notre association
+        </a>
+    </section>
+
+    <section id="apropos" class="section">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+            L'Association des Élèves et Étudiants Musulmans
+            de Côte d'Ivoire (AEEMCI) est un cadre
+            d'éducation, de formation et de fraternité.
+        </p>
+        <p>
+            Notre sous-comité de Zouan-Hounien œuvre
+            pour l'épanouissement intellectuel, moral
+            et spirituel de ses membres.
+        </p>
+    </section>
+
+    <section id="activites" class="section">
+        <h2>Nos activités</h2>
+        <div class="cartes">
+            <article class="carte">
+                <h3>Formation</h3>
+                <p>Des activités éducatives et des formations pour nos membres.</p>
+            </article>
+
+            <article class="carte">
+                <h3>Conférences</h3>
+                <p>Des rencontres pour apprendre, réfléchir et partager.</p>
+            </article>
+
+            <article class="carte">
+                <h3>Solidarité</h3>
+                <p>Des actions fraternelles au service de la communauté.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="galerie" class="section">
+        <h2>Notre galerie photos</h2>
+        <p>Découvrez les moments forts de notre sous-comité.</p>
+
+        <div class="cartes galerie">
+            <article class="carte">
+                <img src="images/rencontre.jpg" alt="Rencontre AEEMCI">
+                <h3>Nos rencontres</h3>
+            </article>
+
+            <article class="carte">
+                <img src="images/formation.jpg" alt="Formation AEEMCI">
+                <h3>Nos formations</h3>
+            </article>
+
+            <article class="carte">
+                <img src="images/evenement.jpg" alt="Événement AEEMCI">
+                <h3>Nos événements</h3>
+            </article>
+          
+        </div>
+    </section>
+
+    <section id="inscription" class="section">
+        <h2>Inscription des membres</h2>
+        <p>
+            Remplissez ce formulaire pour demander
+            votre inscription à l'AEEMCI.
+        </p>
+
+        <form id="formInscription">
+            <label for="nom">Nom et prénoms</label>
+            <input type="text" id="nom" required
+                placeholder="Votre nom complet">
+
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" required
+                placeholder="Votre adresse e-mail">
+
+            <label for="telephone">Numéro de téléphone</label>
+            <input type="tel" id="telephone" required
+                placeholder="Votre numéro">
+
+            <label for="etablissement">Établissement scolaire</label>
+            <input type="text" id="etablissement" required
+                placeholder="Nom de votre établissement">
+
+            <label for="classe">Niveau ou classe</label>
+            <input type="text" id="classe" required
+                placeholder="Exemple : 2nde C">
+
+            <label for="localite">Localité</label>
+            <input type="text" id="localite" required
+                placeholder="Votre localité">
+
+            <button type="submit" id="boutonEnvoi">
+                Envoyer ma demande
+            </button>
+
+            <p id="messageForm" role="status"></p>
+        </form>
+
+        <p>Votre demande sera examinée par un responsable.</p>
+    </section>
+
+    <section id="actualites" class="section">
+        <h2>Nos actualités</h2>
+        <p>
+            Retrouvez ici les informations, annonces
+            et événements de notre association.
+        </p>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Nous contacter</h2>
+        <p>Localité : Zouan-Hounien</p>
+        <p>Téléphone : 0574050872</p>
+        <p>Email : doumbiaaboulaye2508@gmail.com</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 AEEMCI Sous-Comité Zouan-Hounien</p>
+    <p>Ensemble pour apprendre, servir et grandir dans la foie.</p>
+</footer>
+
+<!-- Connexion à Supabase -->
+<script type="module">
+    import { createClient }
+    from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+    // Remplace ces deux valeurs par celles de TON projet Supabase
+    const SUPABASE_URL = "https://jjdpxrlioshmknkcpsjk.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_Qi0KLibUAqv2Vbx4Xbd0vQ_A_J4k93k";
+
+    const supabase = createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+    const formulaire = document.getElementById("formInscription");
+    const bouton = document.getElementById("boutonEnvoi");
+    const message = document.getElementById("messageForm");
+
+    formulaire.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        bouton.disabled = true;
+        bouton.textContent = "Envoi en cours...";
+        message.textContent = "";
+
+        const nom = document.getElementById("nom").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telephone = document.getElementById("telephone").value.trim();
+        const etablissement = document.getElementById("etablissement").value.trim();
+        const classe = document.getElementById("classe").value.trim();
+        const localite = document.getElementById("localite").value.trim();
+
+        const details = "Établissement : " + etablissement
+            + " | Classe : " + classe
+            + " | Localité : " + localite;
+
+        try {
+            const { error } = await supabase
+                .from("registrations")
+                .insert([{
+                    full_name: nom,
+                    email: email,
+                    phone: telephone,
+                    message: details,
+                    status: "En attente"
+                }]);
+
+            if (error) {
+                throw error;
+            }
+
+            message.style.color = "green";
+            message.textContent =
+                "Votre demande a été envoyée avec succès !";
+
+            formulaire.reset();
+
+        } catch (error) {
+            console.error("Erreur Supabase :", error);
+
+            message.style.color = "red";
+            message.textContent =
+                "Échec de l'envoi. Vérifiez votre connexion ou contactez un responsable.";
+
+        } finally {
+            bouton.disabled = false;
+            bouton.textContent = "Envoyer ma demande";
+        }
+    });
+</script>
+
+</body>
+</html>
